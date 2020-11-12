@@ -1,0 +1,1 @@
+INSERT INTO log_file_cursor (cursor, date) VALUES (0, '2019-12-11 10:30:01.030Z');

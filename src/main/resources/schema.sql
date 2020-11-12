@@ -1,0 +1,21 @@
+DROP TABLE IF EXISTS log_file_cursor CASCADE;
+DROP TABLE IF EXISTS log_line CASCADE;
+DROP TABLE IF EXISTS log_line_hit CASCADE;
+
+CREATE TABLE log_file_cursor (
+    cursor BIGINT NOT NULL DEFAULT 0,
+    date TIMESTAMP WITH TIME ZONE NOT NULL
+);
+
+CREATE TABLE log_line (
+    ip VARCHAR NOT NULL,
+    user_agent VARCHAR NOT NULL,
+    date TIMESTAMP WITH TIME ZONE NOT NULL,
+    referer VARCHAR
+);
+CREATE INDEX IF NOT EXISTS idx_log_line__ip ON log_line (ip);
+
+CREATE TABLE log_line_hit (
+    ip VARCHAR NOT NULL CONSTRAINT log_line_hit_pk PRIMARY KEY,
+    date TIMESTAMP WITH TIME ZONE NOT NULL
+);
