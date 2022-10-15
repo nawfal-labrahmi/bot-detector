@@ -32,3 +32,10 @@ Results consistently show a total of 51000 log lines analyzed, and a pub/sub rat
 This improved the performance significantly to around **485 analysis per second** (873500 lines analyzed in 0.5h).
 This was recorded while running the app in Docker on my laptop and watching the value of the file read cursor in the `LOG_FILE_CURSOR` table (Cf. http://localhost:8080/h2-console)
 
+## Technical stack
+* Java
+* Spring Boot
+* RabbitMQ
+* Jooq / H2
+* Docker
+
